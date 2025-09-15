@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: aqua;
+}
+.yo{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}
+.yo a {
+    text-decoration: none;
+    color: black;
+   }
+.yo ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.yo li{
+    margin-right: 40px;
+}
+.foot {
+    background-color: aqua;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: black;
+}
+.menu-lateral{
+    width: 220px;
+    background-color: aquamarine;
+    padding: 15px;
+}
+.menu-lateral ul{
+    list-style: none;
+    padding: 0;
+}
+.menu-lateral li{
+    margin-bottom: 10px;
+}
+.menu-lateral a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+.contenido {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.productos{
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+.producto{
+    border: 2px solid; color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: grey;
+    text-align: center;
+}
+.producto img{
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+.producto h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.producto p{
+    margin-bottom: 5px;
+    color: black;
+}
+.producto a {
+    padding: 6px 12px;
+    background-color:rgb(7, 69, 107);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;}
