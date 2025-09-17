@@ -143,3 +143,67 @@ header{
     max-width: 200px;
     margin-bottom: 10px;
 }
+/* LOGIN */
+main{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+.caja{
+    display: flex;
+    flex-direction: column;
+}
+.botones{
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    justify-content: center;
+    margin: 15px;
+    background-color: brown;
+}
+.Obligatorio{
+    justify-content: center;
+    color: red;
+
+}
+
+/*REGISTRO*/
+main{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.caja{
+    display: flex;
+    flex-direction: column;
+}
+.botones{
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    justify-content: center;
+    margin: 15px;
+    background-color: brown;
+}
+.Obligatorio{
+    justify-content: center;
+    color: red;
+
+}
+h1{
+    justify-content: left;
+    text-align: left;
+    align-items: left;
+    background-color: aqua;
+}
+body{
+    background-color: aqua;
+}
