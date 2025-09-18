@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 header{
     display: flex;
     justify-content: space-between;
@@ -36,7 +37,7 @@ header{
 }
 .menu-lateral{
     width: 220px;
-    background-color: aquamarine;
+    background-color: aqua;
     padding: 15px;
 }
 .menu-lateral ul{
@@ -168,13 +169,13 @@ h1{
 }
 .Obligatorio{
     justify-content: center;
-    color: red;
+    color: rgb(18, 143, 220);
 
 }
 
 /*REGISTRO*/
 main{
-    background-color: aqua;
+    background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,6 +185,10 @@ main{
 .caja{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }
 .botones{
     border-radius: 10px;
@@ -191,7 +196,7 @@ main{
     padding: 10px;
     justify-content: center;
     margin: 15px;
-    background-color: brown;
+    background-color: rgb(179, 241, 11);
 }
 .Obligatorio{
     justify-content: center;
@@ -202,8 +207,8 @@ h1{
     justify-content: left;
     text-align: left;
     align-items: left;
-    background-color: aqua;
+    background-color: grey;
 }
 body{
-    background-color: aqua;
+    background-color: grey;
 }
