@@ -2,13 +2,18 @@
     box-sizing: border-box;
 }
 
+body{
+background-image: url(../img/fondo.jpg);
 
+height: 100%;
+width: 100%;
+}
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: lightseagreen;
+    background-color: rgb(11, 131, 158);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 .yo{
@@ -30,7 +35,7 @@ header{
     margin-right: 40px;
 }
 .foot {
-    background-color: lightseagreen;
+    background-color: rgb(11, 131, 158);
     text-align: center;
     padding: 15px;
     margin-top: 20px;
@@ -63,7 +68,7 @@ header{
 .productos{
     flex: 1;
     padding: 20px;
-    background-color: white;
+    
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -72,7 +77,7 @@ header{
     border-radius: 5px; 
     border: 4px solid; color: black;
     padding: 10px;
-    background-color: grey;
+    background-color: rgb(36, 152, 179);
     text-align: center;
     width: 180px;
     
@@ -81,6 +86,8 @@ header{
     width: 130px;
     height: 130px;
     margin-bottom: 10px;
+    border: solid 4px;
+    border-color: rgb(2, 43, 69);
 }
 .productos h2{
     width: 100%;
@@ -111,7 +118,6 @@ header{
 .productos-top{
     flex: 1;
     padding: 20px;
-    background-color: white;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -154,73 +160,111 @@ header{
     width: 130px;
     height: 130px;
     margin-bottom: 10px;
+    border: 4px solid; color: gold;
+    border-radius: 6px;
+   
 }
 /* LOGIN */
-main{
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login{
+    
+    color: darkblue;
+    font-weight: bold;
+}
+body.login-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
 }
 
-h1{
-    text-align: center;
-}
-.caja{
-    display: flex;
-    flex-direction: column;
-}
-.botones{
+.login-page .caja {
+    background-color: white;
+    padding: 20px;
+    border: solid gray;
     border-radius: 10px;
-    color: black;
-    padding: 10px;
-    justify-content: center;
-    margin: 15px;
-    background-color: brown;
+    width: 300px;
+    margin: auto;
 }
-.Obligatorio{
-    justify-content: center;
-    color: rgb(18, 143, 220);
 
+.login-page .login {
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+.login-page .input-texto {
+    width: 100%;
+    padding: 8px;
+    margin: 8px ;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.login-page button.registrar {
+    width: 100%;
+    padding: 10px;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
 
 /*REGISTRO*/
-main{
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+body.register-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
 }
 
-
-.caja{
+.register-page .caja {
     display: flex;
     flex-direction: column;
     background-color: white;
-    margin: 20px;
     padding: 20px;
     border-radius: 10px;
+    width: 350px;
+    margin: auto;
+    border: solid gray;
 }
-.botones{
-    border-radius: 10px;
-    color: black;
-    padding: 10px;
-    justify-content: center;
-    margin: 15px;
-    background-color: rgb(179, 241, 11);
-}
-.Obligatorio{
-    justify-content: center;
-    color: red;
 
+.register-page .titulo-register {
+    text-align: center;
+    margin: 20px 0;
+    
+    color: darkblue;
+    padding: 10px;
+    border-radius: 5px;
 }
-h1{
-    justify-content: left;
-    text-align: left;
-    align-items: left;
-    background-color: grey;
+
+.register-page .input-texto {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
-body{
-    background-color: grey;
-}   
+
+.register-page .grupo {
+    margin: 10px 0;
+}
+
+.register-page .botones {
+    margin-top: 15px;
+}
+.register-page button.registrar {
+    width: 100%;
+    padding: 10px;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+.register-page p a {
+    color: blue;
+    text-decoration: none;
+    
+}
+
 
