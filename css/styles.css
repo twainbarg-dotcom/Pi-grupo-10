@@ -266,5 +266,41 @@ body.register-page {
     text-decoration: none;
     
 }
+/* ver detalles */
 
+.producto-mas {
+  display: flex;         
+  align-items: flex-start; 
+  gap: 40px;
 
+}
+
+.producto-mas img {
+  width: 500px; 
+  height: auto;
+}
+
+.info-producto {
+  max-width: 600px;
+  font-size: 30px;
+  
+}
+
+.Botoncompra button{
+    padding: 30px 40px;
+    background-color: rgb(13, 107, 139);
+    font-size: 20px;
+    color: white; 
+}
+
+.opinion_clientes{
+    background-color: white;
+}
+
+.otra_opinion{
+    background-color: white;
+}
+
+.ultima_opinion{
+    background-color: white;
+}
