@@ -269,44 +269,202 @@ body.register-page {
 /* ver detalles */
 
 .producto-mas {
-  display: flex;         
+  display: flex;  
+  flex-wrap: wrap;       
   align-items: flex-start; 
+  padding: 30px;
   gap: 40px;
 
 }
 
 .producto-mas img {
-  width: 500px; 
+  width: 100%; 
+  max-width: 400px;
   height: auto;
+  border-radius: 10px;
+  border: 3px solid black;
 }
 
 .info-producto {
+  flex: 1;
   max-width: 600px;
-  font-size: 30px;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.texto1{
+font-family:cursive;
+font-weight: bold;
+
 }
 
 .Botoncompra button{
-    padding: 30px 40px;
+    margin-top: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
     background-color: rgb(6, 121, 83);
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
     color: white; 
 }
 
 .opinion_clientes{
-    background-color: white;
-}
+  background-color: white;
+  border: 1px solid #a59e9e;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 14px;
+ }
 
 .otra_opinion{
-    background-color: white;
+  background-color: white;
+  border: 1px solid #a59e9e;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 14px;    
 }
 
 .ultima_opinion{
-    background-color: white
+   background-color: white;
+  border: 1px solid #a59e9e;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 .texto2{
     color: green;
     
+}
+/* responsive celular (420px)*/
+@media (max-width: 420px) {
+ body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+ }
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .yo ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .yo li {
+    margin: 5px 0;
+  }
+
+  .buscador {
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  .buscador input {
+    width: 70%;
+  }
+
+  .buscador button {
+    width: 25%;
+  }
+  .contenido {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-lateral ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-lateral li {
+    margin: 5px 10px;
+  }
+  .productos-top {
+    justify-content: center;
+    width: 90%;
+    max-width: 300px;
+  }
+ .productos{
+    justify-content: center;
+    max-width: 300px;
+    width: 90%;
+ }
+  .producto-top img {
+    width: 100%;
+    height: auto;
+  }
+  .producto img{
+   width: 100%;
+   height: auto;  
+  }
+  .producto-mas {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .producto-mas img {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .info-producto {
+    max-width: 100%;
+  }
+
+  .info-producto ul {
+    padding: 0;
+  }
+
+  .info-producto li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .Botoncompra button {
+    width: 100%;
+  }
+
+  
+  .otra_opinion{
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+  }
+  .opinion_clientes{
+   width: 100%;
+   margin-top: 10px;
+   text-align: left;  
+  }
+  .ultima_opinion{
+   width: 100%;
+   margin-top: 10px;
+   text-align: left;   
+  }
+ .register-page .caja {
+    width: 90%;
+    margin: 20px auto;
+  }
+ .login-page .caja{
+   width: 90%;
+   margin: 20px auto;
+ }
+  .foot {
+    width: 100%;
+    font-size: 13px;
+  }
 }
 
