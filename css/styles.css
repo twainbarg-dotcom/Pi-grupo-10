@@ -208,7 +208,13 @@ body.login-page {
     border-radius: 3px;
     font-weight: bold;
 }
-
+.pagina-login{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /*REGISTRO*/
 
 body.register-page {
@@ -265,7 +271,13 @@ body.register-page {
 .register-page p a {
     color: blue;
     text-decoration: none;
-    
+}
+.pagina-register {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 /* ver detalles */
 
