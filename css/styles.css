@@ -163,8 +163,9 @@ header{
     margin-bottom: 10px;
     border: 4px solid; color: gold;
     border-radius: 6px;
-   
+
 }
+
 /* LOGIN */
 .login{
     
@@ -207,7 +208,6 @@ body.login-page {
     border-radius: 3px;
     font-weight: bold;
 }
-
 
 /*REGISTRO*/
 
@@ -468,4 +468,3 @@ font-weight: bold;
     font-size: 13px;
   }
 }
-

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - Registro</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="register-page">
     <header class="head">
         <a href="index.html">
@@ -18,13 +20,13 @@
                 <li><a href="register.html">Register</a></li>
             </ul>
         </nav>
-       <div class="buscador">
+        <div class="buscador">
             <form class="busqueda" action="./search-results.html" method="get">
                 <label for="busqueda"></label>
                 <input type="search" name="busqueda" id="busqueda" value="" placeholder="Buscador">
                 <button type="submit">Buscar</button>
             </form>
-         </div> 
+        </div>
     </header>
 
     <main>
@@ -33,17 +35,19 @@
             <form action="login.html" method="get">
                 <div>
                     <label for="email">Email</label>
-                    <input class="input-texto" type="email" id="email" name="Usermail" placeholder="Email" >
+                    <input class="input-texto" type="email" id="email" name="Usermail" placeholder="Email" required>
                 </div>
 
                 <div>
                     <label for="password">Contraseña</label>
-                    <input class="input-texto" type="password" id="password" name="Userpassword" placeholder="Password">
+                    <input class="input-texto" type="password" id="password" name="Userpassword" placeholder="Password"
+                        required>
                 </div>
 
                 <div>
                     <label for="password2">Repetir Contraseña</label>
-                    <input class="input-texto" type="password" id="password2" name="Userpassword2" placeholder="Password">
+                    <input class="input-texto" type="password" id="password2" name="Userpassword2"
+                        placeholder="Password" required>
                 </div>
 
                 <div class="grupo">
@@ -59,8 +63,9 @@
             </form>
         </section>
         <footer class="foot">
-     <p>Integrantes: Tomás Wainbarg, Yannick Mayo, Joaquin Garcia Navarro</p>
-     </footer>
+            <p>Integrantes: Tomás Wainbarg, Yannick Mayo, Joaquin Garcia Navarro</p>
+        </footer>
     </main>
 </body>
+
 </html>
