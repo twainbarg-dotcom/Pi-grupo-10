@@ -29,7 +29,7 @@ fetch(url_categoria)
         const categoria = data[i];
 
         console.log(categoria);
-        contenido += `<li><a href="category.html">${categoria}</a></li>`
+        contenido += `<li><a href="category.html?category=${categoria}">${categoria}</a></li>`;
     }
 
     category.innerHTML = contenido
@@ -37,3 +37,4 @@ fetch(url_categoria)
     .catch(function(error){
         console.log("error" + error);
     })
+
