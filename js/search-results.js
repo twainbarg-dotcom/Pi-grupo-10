@@ -38,3 +38,27 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+let terminoBuscado = queryStringObj.get('buscador');
+let URL = `https://dummyjson.com/products/search?q=${terminoBuscado}`
+let formulario = document.querySelector(".busqueda")
+let article = document.querySelector(".producto")
+
+fetch(URL)
+.then(function(rta){
+    return rta.json()
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
