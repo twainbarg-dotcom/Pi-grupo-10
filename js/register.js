@@ -1,5 +1,7 @@
 const form = document.querySelector(".busqueda");
 const input = document.querySelector("#busqueda");
+let category = document.querySelector(".menu-lateral ul")
+let url_categoria = `https://dummyjson.com/products/category-list`
 
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
@@ -15,20 +17,18 @@ form.addEventListener("submit", function (e) {
 
 
 })
-let category = document.querySelector(".menu-lateral ul")
-let url_categoria = `https://dummyjson.com/products/category-list`
 fetch(url_categoria)
     .then(function (response) {
         return response.json()
     })
     .then(function (data) {
-      console.log(data);
+      
       let contenido = ""
        
       for (let i = 0; i < data.length; i++) {
         const categoria = data[i];
 
-        console.log(categoria);
+       
         contenido += `<li><a href="category.html?category=${categoria}">${categoria}</a></li>`;
     }
 

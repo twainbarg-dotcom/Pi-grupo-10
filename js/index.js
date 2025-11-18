@@ -1,5 +1,9 @@
 const form = document.querySelector(".busqueda");
 const input = document.querySelector("#busqueda");
+let smartphonesSection = document.querySelector("#smartphones");
+let productosDestacadosSection = document.querySelector("#productos-destacados");
+let category = document.querySelector(".menu-lateral ul")
+let url_categoria = `https://dummyjson.com/products/category-list`
 
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
@@ -15,20 +19,17 @@ form.addEventListener("submit", function (e) {
 
 
 })
-let category = document.querySelector(".menu-lateral ul")
-let url_categoria = `https://dummyjson.com/products/category-list`
 fetch(url_categoria)
     .then(function (response) {
         return response.json()
     })
     .then(function (data) {
-      console.log(data);
       let contenido = ""
        
       for (let i = 0; i < data.length; i++) {
         const categoria = data[i];
 
-        console.log(categoria);
+        
         contenido += `<li><a href="category.html?category=${categoria}">${categoria}</a></li>`;
     }
 
@@ -38,3 +39,50 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
+fetch('https://dummyjson.com/products/category/smartphones')
+ .then(function(response){
+    return response.json()
+ })
+ .then(function(data){ 
+    let productos = ""
+ for (let i = 0; i < 10; i++) {
+    console.log(data.products[i])
+      productos += `<article class="producto">
+        <img src=${data.products[i].images[0]} alt=${data.products[i].title}>
+        <h3>${data.products[i].title}</h3>
+        <p>${data.products[i].description}</p>
+        <p>Precio $${data.products[i].price}</p>
+        <a href="product.html?product=${data.products[i].id}">Ver detalle</a>
+    </article>
+      `
+ } 
+ smartphonesSection.innerHTML = productos
+})
+
+.catch(function(error){
+        console.log("error" + error);
+    })
+
+fetch('https://dummyjson.com/products')
+ .then(function(response){
+    return response.json()
+ })
+ .then(function(data){ 
+    let productos2 = ""
+ for (let i = 0; i < 10; i++) {
+    console.log(data.products[i])
+      productos2 += `<article class="producto">
+        <img src=${data.products[i].images[0]} alt=${data.products[i].title}>
+        <h3>${data.products[i].title}</h3>
+        <p>${data.products[i].description}</p>
+        <p>Precio $${data.products[i].price}</p>
+        <a href="product.html?product=${data.products[i].id}">Ver detalle</a>
+    </article>
+      `
+ } 
+ productosDestacadosSection.innerHTML = productos2;
+})
+
+.catch(function(error){
+        console.log("error" + error);
+    })
