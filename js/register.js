@@ -38,3 +38,31 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
+    let formR = document.querySelector(".formR");
+let emailR = document.querySelector("#email");
+let passwordR = document.querySelector("#password");
+let password2R = document.querySelector("#password2");
+
+formR.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    if (emailR.value.length == 0) {
+        alert("El email es obligatorio");
+    }
+
+    else if (passwordR.value.length == 0) {
+        alert("La contraseña es obligatoria");
+    }
+
+    else if (passwordR.value.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres");
+    }
+
+    else if (passwordR.value !== password2R.value) {
+        alert("Las contraseñas no coinciden");
+    }
+    else {
+        formRegister.submit();  
+    }
+
+});

@@ -38,3 +38,25 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
+let formulario = document.querySelector(".formlogin");
+let email = document.querySelector("#email");
+let password = document.querySelector("#password");
+
+formulario.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+if (email.value.length == 0) {
+        alert("El email es obligatorio");
+    }
+
+ else if (password.value.length == 0) {
+        alert("La contraseña es obligatoria");
+    } 
+    else if (password.value.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres");
+    } 
+    else {
+        form.submit(); 
+    }
+});
+
