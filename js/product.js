@@ -46,6 +46,13 @@ fetch(`https://dummyjson.com/products/${idProduct}`)
     return response.json()
  })
  .then(function(data){ 
+    let tagsHTML = "";
+    for (let i = 0; i < data.tags.length && i < 3; i++) {
+        tagsHTML += `<li>${data.tags[i]}</li>`;
+    }
+
+
+
         let opinionesHTML = "";
 
     if (data.reviews && data.reviews.length > 0) {
@@ -60,6 +67,7 @@ fetch(`https://dummyjson.com/products/${idProduct}`)
                     <li><strong>${review.reviewerName}</strong></li>
                     <li>Calificación: ⭐ ${review.rating}</li>
                     <li>Comentario: ${review.comment}</li>
+                    <li>Fecha: ${review.date}</li>
                 </ul>
             </aside>`;
         }
@@ -81,17 +89,21 @@ fetch(`https://dummyjson.com/products/${idProduct}`)
                 <h3>Especificaciones:</h3>
                 <ul class="texto1">
                  <li>Precio: $${data.price}</li>
-                 <li>Categoría: ${data.category}</li>
-                 <li>${data.description}</li>
+                 <li>Marca: ${data.brand}</li>
+                 <li>Categoría: <a href="category.html?category=${data.category}">${data.category}</a></li>
+                 <li>Descripcion: ${data.description}</li>
                  <li>Stock: ${data.stock} unidades</li>
                  <li class="texto2">Llega gratis mañana 📦</li>
                  </ul>
+                  <h3>Tags:</h3>
+                <ul>${tagsHTML}</ul>
                  
                 <div class="Botoncompra">
                     <button>COMPRAR PRODUCTO 🛒</button>
                 </div>
-     
-                 ${opinionesHTML}
+
+                 <h3>Opiniones:</h3>
+                ${opinionesHTML}
     </div>`;
 
      
