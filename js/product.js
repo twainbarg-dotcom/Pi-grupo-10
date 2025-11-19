@@ -13,7 +13,7 @@ form.addEventListener("submit", function (e) {
 
      if (input.value.length == 0){
         alert("El campo de busqueda está vacio")
-    }else if (input.value.length <= 3){
+    }else if (input.value.length < 3){
         alert("El campo de busqueda debe tener al menos 3 caracteres")
     }else{
         form.submit()

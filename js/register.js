@@ -9,7 +9,7 @@ form.addEventListener("submit", function (e) {
 
      if (input.value.length == 0){
         alert("El campo de busqueda está vacio")
-    }else if (input.value.length <= 3){
+    }else if (input.value.length < 3){
         alert("El campo de busqueda debe tener al menos 3 caracteres")
     }else{
         form.submit()
@@ -38,31 +38,40 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
-    let formR = document.querySelector(".formR");
+let formR = document.querySelector(".formR");
 let emailR = document.querySelector("#email");
 let passwordR = document.querySelector("#password");
 let password2R = document.querySelector("#password2");
+let checkR = document.querySelector("#terminos");
 
 formR.addEventListener("submit", function(e){
     e.preventDefault();
 
     if (emailR.value.length == 0) {
         alert("El email es obligatorio");
+        return;
     }
 
-    else if (passwordR.value.length == 0) {
+     if (passwordR.value.length == 0) {
         alert("La contraseña es obligatoria");
+        return;
     }
 
-    else if (passwordR.value.length < 6) {
+     if (passwordR.value.length < 6) {
         alert("La contraseña debe tener al menos 6 caracteres");
+        return;
     }
 
-    else if (passwordR.value !== password2R.value) {
+     if (passwordR.value !== password2R.value) {
         alert("Las contraseñas no coinciden");
+        return;
     }
-    else {
-        formR.submit();  
-    }
+    if (checkR.checked == false) {
+    alert("Debes aceptar los términos y condiciones");
+    return;
+}
+     
+    formR.submit();  
+    
 
 });

@@ -9,7 +9,7 @@ form.addEventListener("submit", function (e) {
 
     if (input.value.length == 0) {
         alert("El campo de busqueda está vacio");
-    } else if (input.value.length <= 3) {
+    } else if (input.value.length < 3) {
         alert("El campo de busqueda debe tener al menos 3 caracteres");
     } else {
         this.submit(); 
@@ -47,9 +47,8 @@ let terminoBuscado = queryStringObj.get("busqueda");
 
 
 
-let todosLosH2 = document.querySelectorAll("h2");
-let h2Resultados = todosLosH2[0];        
-let h2SinResultados = todosLosH2[1];     
+let h2Resultados = document.querySelector(".titulo-resultados");        
+let h2SinResultados = document.querySelector(".titulo-sin-resultados");     
 
 h2Resultados.innerText = `Resultados de búsqueda para: ${terminoBuscado}`;
 h2SinResultados.style.display = "none";
@@ -75,6 +74,7 @@ fetch(URL)
             h2SinResultados.innerText =
                 `No hay resultados para el término: ${terminoBuscado}`;
             h2SinResultados.style.display = "block";
+            return
         } else {
             h2SinResultados.style.display = "none";
 
@@ -85,12 +85,12 @@ fetch(URL)
                         <h3>${resultado[i].title}</h3>
                         <p>${resultado[i].category}</p>
                         <p>$${resultado[i].price}</p>
-                        <a href="product.html?producto=${resultado[i].id}">Ver detalles</a>
+                        <a href="product.html?product=${resultado[i].id}">Ver detalles</a>
                     </article>
                 `;
             }
         }
-        if (resultado.length === 0) {listaProductos.innerHTML = "<h2>No se pudo cargar la informacion</h2>";}
+       
     })
     .catch(function (err) {
         console.log(err);
