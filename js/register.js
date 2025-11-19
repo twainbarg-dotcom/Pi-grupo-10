@@ -62,7 +62,7 @@ formR.addEventListener("submit", function(e){
         alert("Las contraseñas no coinciden");
     }
     else {
-        formRegister.submit();  
+        formR.submit();  
     }
 
 });
