@@ -1,40 +1,38 @@
-const form = document.querySelector(".busqueda");
-const input = document.querySelector("#busqueda");
-let category = document.querySelector(".menu-lateral ul")
-let url_categoria = `https://dummyjson.com/products/category-list`
+let data = localStorage.getItem("miClave");
+let info = JSON.parse(data);
+let saludo = document.querySelector(".saludo");
+let mensajito = document.querySelector(".mensajito");
+let links = document.querySelector(".links");
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
-    let name = input.value.length;
+if (links){
 
-     if (input.value.length == 0){
-        alert("El campo de busqueda está vacio")
-    }else if (input.value.length < 3){
-        alert("El campo de busqueda debe tener al menos 3 caracteres")
-    }else{
-        form.submit()
+    if (info){
+
+        if(saludo){
+            saludo.innerText = "Bienvenido: " + info.email;
+        }
+        if (mensajito){
+            mensajito.innerText = "Disfruta de la app";
+        }
+        links.innerHTML = `
+            <li class="cuenta">Bienvenido: ${info.email}</li>
+            <li class="logout"><a id="logout-link" href="#">Logout</a></li>
+        `;
+ }
+
+ else{
+    if(saludo){
+        saludo.innerText="";
     }
 
-
-})
-fetch(url_categoria)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-      
-      let contenido = ""
-       
-      for (let i = 0; i < data.length; i++) {
-        const categoria = data[i];
-
-       
-        contenido += `<li><a href="category.html?category=${categoria}">${categoria}</a></li>`;
+    if(mensajito){
+        mensajito.innerText = "";
     }
-
-    category.innerHTML = contenido
-    })
-    .catch(function(error){
-        console.log("error" + error);
-    })
-
+    
+    links.innerHTML = `
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        `;
+    }
+}

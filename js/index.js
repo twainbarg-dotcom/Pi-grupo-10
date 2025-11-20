@@ -39,7 +39,7 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
-fetch('https://dummyjson.com/products/category/smartphones')
+fetch('https://dummyjson.com/products')
  .then(function(response){
     return response.json()
  })
@@ -69,7 +69,7 @@ fetch('https://dummyjson.com/products')
  })
  .then(function(data){ 
     let productos2 = ""
- for (let i = 0; i < 10; i++) {
+ for (let i = 10; i < 20; i++) {
     console.log(data.products[i])
       productos2 += `<article class="producto">
         <img src=${data.products[i].images[0]} alt=${data.products[i].title}>

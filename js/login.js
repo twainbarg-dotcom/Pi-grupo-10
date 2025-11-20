@@ -38,25 +38,31 @@ fetch(url_categoria)
         console.log("error" + error);
     })
 
+let mail = document.querySelector("#email");
+let contra = document.querySelector("#password") ;
 let formulario = document.querySelector(".formlogin");
-let email = document.querySelector("#email");
-let password = document.querySelector("#password");
 
-formulario.addEventListener("submit", function(e) {
-  e.preventDefault();
+formulario.addEventListener("submit",function(event){
+    event.preventDefault();
 
-if (email.value.length == 0) {
+    if(mail.value == ""){
         alert("El email es obligatorio");
+        return false
     }
 
- else if (password.value.length == 0) {
-        alert("La contraseña es obligatoria");
-    } 
-    else if (password.value.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres");
-    } 
-    else {
-        form.submit(); 
+    if(contra.value == ""){
+       alert("La contraseña es obligatoria");
+       return false
     }
-});
 
+    if(contra.value.length <6 ){
+       alert("La contraseña debe tener al menos 6 caracteres");
+       return false;
+    }
+    let user = {
+        email:mail.value 
+    }
+    let userString = JSON.stringify(user);
+    localStorage.setItem("miClave", userString);
+    this.submit();
+})
