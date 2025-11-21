@@ -1,39 +1,29 @@
-const form = document.querySelector(".busqueda");
-const input = document.querySelector("#busqueda");
-let category = document.querySelector(".menu-lateral ul")
-let url_categoria = `https://dummyjson.com/products/category-list`
+document.addEventListener("click",function (e){
+    let logout = document.querySelector("#logout-link");
+    let links = document.querySelector(".links");
+    let saludo = document.querySelector(".saludo");
+    let mensajito = document.querySelector(".mensajito")
+    
+    
+    if (logout){
+        logout.addEventListener("click", function (e) {
+            e.preventDefault();
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
+             localStorage.removeItem("miClave");
 
-     if (input.value.length == 0){
-        alert("El campo de busqueda está vacio")
-    }else if (input.value.length < 3){
-        alert("El campo de busqueda debe tener al menos 3 caracteres")
-    }else{
-        form.submit()
+            if (saludo) saludo.innerText = "";
+
+            if (mensajito) mensajito.innerText = "";
+
+            if (links){
+                links.innerHTML = `
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                `
+             }
+             window.location.href = "./index.html";
+        })  
     }
-
-
 })
-fetch(url_categoria)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-      
-      let contenido = ""
-       
-      for (let i = 0; i < data.length; i++) {
-        const categoria = data[i];
-
-       
-        contenido += `<li><a href="category.html?category=${categoria}">${categoria}</a></li>`;
-    }
-
-    category.innerHTML = contenido
-    })
-    .catch(function(error){
-        console.log("error" + error);
-    })
 

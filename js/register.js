@@ -3,17 +3,19 @@ const input = document.querySelector("#busqueda");
 let category = document.querySelector(".menu-lateral ul")
 let url_categoria = `https://dummyjson.com/products/category-list`
 
+let errorBusqueda = document.querySelector(".errorBusqueda");
+
 form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
-     if (input.value.length == 0){
-        alert("El campo de busqueda está vacio")
-    }else if (input.value.length < 3){
-        alert("El campo de busqueda debe tener al menos 3 caracteres")
-    }else{
-        form.submit()
-    }
-
+    if (input.value.length == 0) {
+        errorBusqueda.innerText = "El campo de busqueda está vacio"
+        return false
+    } if (input.value.length < 3) {
+        errorBusqueda.innerText = "El campo de busqueda debe tener al menos 3 caracteres"
+        return false 
+    } 
+        this.submit(); 
 
 })
 fetch(url_categoria)
@@ -43,31 +45,36 @@ let passwordR = document.querySelector("#password");
 let password2R = document.querySelector("#password2");
 let checkR = document.querySelector("#terminos");
 
+
+let errorEmail = document.querySelector(".errorEmaR");
+let errorCon1 = document.querySelector(".errorCoR");
+let errorRepetircontra = document.querySelector(".errorRECONR");
+
 formR.addEventListener("submit", function(e){
     e.preventDefault();
 
     if (emailR.value.length == 0) {
-        alert("El email es obligatorio");
-        return;
+        errorEmail.innerText = "Ingresa tu email"
+        return false
     }
 
      if (passwordR.value.length == 0) {
-        alert("La contraseña es obligatoria");
-        return;
+        errorCon1.innerText = "Ingresa tu contraseña"
+        return false
     }
 
      if (passwordR.value.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres");
-        return;
+        errorRepetircontra.innerText = "La contraseña debe tener al menos 6 caracteres"
+        return false
     }
 
      if (passwordR.value !== password2R.value) {
-        alert("Las contraseñas no coinciden");
-        return;
+        password2R.innerText = "Las contraseñas no coinciden"
+        return false
     }
     if (checkR.checked == false) {
-    alert("Debes aceptar los términos y condiciones");
-    return;
+    checkR.innerText = "aceptar los términos y condiciones"
+    return false
 }
      
     formR.submit();  

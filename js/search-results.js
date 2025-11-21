@@ -3,17 +3,20 @@ const form = document.querySelector(".busqueda");
 const input = document.querySelector("#busqueda");
 let category = document.querySelector(".menu-lateral ul");
 let url_categoria = "https://dummyjson.com/products/category-list";
+let errorBusqueda = document.querySelector(".errorBusqueda");
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     if (input.value.length == 0) {
-        alert("El campo de busqueda está vacio");
-    } else if (input.value.length < 3) {
-        alert("El campo de busqueda debe tener al menos 3 caracteres");
-    } else {
+        errorBusqueda.innerText = "El campo de busqueda está vacio"
+        return false
+    } if (input.value.length < 3) {
+        errorBusqueda.innerText = "El campo de busqueda debe tener al menos 3 caracteres"
+        return false 
+    } 
         this.submit(); 
-    }
+
 });
 
 

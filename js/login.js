@@ -3,17 +3,19 @@ const input = document.querySelector("#busqueda");
 let category = document.querySelector(".menu-lateral ul")
 let url_categoria = `https://dummyjson.com/products/category-list`
 
+let errorBusqueda = document.querySelector(".errorBusqueda");
+
 form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
-     if (input.value.length == 0){
-        alert("El campo de busqueda está vacio")
-    }else if (input.value.length < 3){
-        alert("El campo de busqueda debe tener al menos 3 caracteres")
-    }else{
-        form.submit()
-    }
-
+    if (input.value.length == 0) {
+        errorBusqueda.innerText = "El campo de busqueda está vacio"
+        return false
+    } if (input.value.length < 3) {
+        errorBusqueda.innerText = "El campo de busqueda debe tener al menos 3 caracteres"
+        return false 
+    } 
+        this.submit(); 
 
 })
 fetch(url_categoria)
@@ -40,22 +42,24 @@ fetch(url_categoria)
 let mail = document.querySelector("#email");
 let contra = document.querySelector("#password") ;
 let formulario = document.querySelector(".formlogin");
+let errorE = document.querySelector(".error")
+let errorC = document.querySelector(".error2")
 
 formulario.addEventListener("submit",function(event){
     event.preventDefault();
 
     if(mail.value == ""){
-        alert("El email es obligatorio");
+        errorE.innerText= "Ingresa tu mail"
         return false
     }
 
     if(contra.value == ""){
-       alert("La contraseña es obligatoria");
+       errorC.innerText = "Ingresa tu contraseña"
        return false
     }
 
     if(contra.value.length <6 ){
-       alert("La contraseña debe tener al menos 6 caracteres");
+       errorC.innerText = "La contraseña debe tener al menos 6 caracteres"
        return false;
     }
     let user = {

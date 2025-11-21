@@ -7,17 +7,19 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let idProduct = queryStringObj.get('product');
 
+let errorBusqueda = document.querySelector(".errorBusqueda");
+
 form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
-     if (input.value.length == 0){
-        alert("El campo de busqueda está vacio")
-    }else if (input.value.length < 3){
-        alert("El campo de busqueda debe tener al menos 3 caracteres")
-    }else{
-        form.submit()
-    }
-
+    if (input.value.length == 0) {
+        errorBusqueda.innerText = "El campo de busqueda está vacio"
+        return false
+    } if (input.value.length < 3) {
+        errorBusqueda.innerText = "El campo de busqueda debe tener al menos 3 caracteres"
+        return false 
+    } 
+        this.submit(); 
 
 })
 fetch(url_categoria)

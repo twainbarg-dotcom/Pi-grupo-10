@@ -22,6 +22,7 @@
             <form class="busqueda" action="./search-results.html" method="get">
                 <label for="busqueda"></label>
                 <input type="search" name="busqueda" id="busqueda" value="" placeholder="Buscador">
+                <div class="errorBusqueda"></div>
                 <button type="submit">Buscar</button>
             </form>
          </div>
@@ -44,11 +45,13 @@
                 <div>
                     <label for="email">Email</label >
                     <input class="input-texto" type="email" id="email" name="usermail" placeholder="Email" >
+                    <div class="error"></div>
                 </div>
 
                 <div>
                     <label for="password">Contraseña</label>
                     <input class="input-texto" type="password" id="password" name="userpassword" placeholder="Password" >
+                    <div class="error2"></div>
                 </div>
 
                 <div class="botones">
