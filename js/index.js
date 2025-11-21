@@ -7,7 +7,6 @@ let url_categoria = `https://dummyjson.com/products/category-list`
 
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
-    let name = input.value.length;
 
      if (input.value.length == 0){
         alert("El campo de busqueda está vacio")
@@ -46,7 +45,6 @@ fetch('https://dummyjson.com/products')
  .then(function(data){ 
     let productos = ""
  for (let i = 0; i < 10; i++) {
-    console.log(data.products[i])
       productos += `<article class="producto">
         <img src=${data.products[i].images[0]} alt=${data.products[i].title}>
         <h3>${data.products[i].title}</h3>
@@ -70,7 +68,6 @@ fetch('https://dummyjson.com/products')
  .then(function(data){ 
     let productos2 = ""
  for (let i = 10; i < 20; i++) {
-    console.log(data.products[i])
       productos2 += `<article class="producto">
         <img src=${data.products[i].images[0]} alt=${data.products[i].title}>
         <h3>${data.products[i].title}</h3>

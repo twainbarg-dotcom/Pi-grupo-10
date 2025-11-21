@@ -9,7 +9,6 @@ let idProduct = queryStringObj.get('product');
 
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
-    let name = input.value.length;
 
      if (input.value.length == 0){
         alert("El campo de busqueda está vacio")

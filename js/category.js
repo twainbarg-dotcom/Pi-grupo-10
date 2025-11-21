@@ -5,8 +5,6 @@ let url_categoria = `https://dummyjson.com/products/category-list`
 
 form.addEventListener("submit", function (e) {
     e.preventDefault(); 
-    let name = input.value.length;
-
      if (input.value.length == 0){
         alert("El campo de busqueda está vacio")
     }else if (input.value.length < 3){
